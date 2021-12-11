@@ -1,0 +1,94 @@
+<!-- project/blog/templates/blog/base.html -->
+
+<!doctype html>
+<html>
+<head>
+    <title>Blog</title>
+	<!-- highlight.js-->
+	<link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+        
+<style>
+.field  {
+    margin-top: 20px;
+}
+
+/* ブロック要素にする*/
+label {
+    display: block;
+}
+
+/* タイトル */
+input {
+    width: 45%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: solid 1px;
+}
+
+/* テキスト*/
+textarea {
+    width: 45%;
+    box-sizing: border-box;
+    border: solid 1px;
+}
+
+/* この属性以外のfloatによる意図しない回り込みは解除 */
+.markdownx::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* テキスト*/
+textarea {
+    width: 45%;
+    box-sizing: border-box;
+    border: solid 1px;
+    float: left; /* 追加 */
+}
+
+/* プレビューされている属性を右側に置く */
+.markdownx-preview {
+    width: 45%;
+    margin-right: 5%;
+    float: right;
+    word-break: break-all; /* テキストを幅に合わせて改行 */
+}
+
+/* 送信ボタン*/
+button {
+    margin-top: 30px;
+    width: 10%;
+    padding: 5px;
+}
+
+/* テーブル*/
+.markdownx table {
+    border-collapse: collapse;
+}
+
+/* テーブル*/
+.markdownx th,td {
+    border: solid 2px;
+}
+
+/* このブロックの枠を制限*/
+.detail_field {
+    margin-right: 70%;
+}
+
+</style>
+
+</head>
+<body>
+    <h1>Blog</h1>
+    {% block content %}
+    {% endblock %}
+
+	<!-- highlight.js-->
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+	<!-- highlight.js-->
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
